@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class Zavd2 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Введіть значення a: ");
+        double a = scanner.nextDouble();
+        System.out.print("Введіть значення b: ");
+        double b = scanner.nextDouble();
+
+        System.out.print("Введіть значення x: ")
+        double x = scanner.nextDouble();
+
+        double result;
+        if (x < 7) {
+            result = Math.sqrt(Math.pow(x, 3) - a);
+        } else if (x == 7) {
+            result = 3 * Math.pow(x, 2) - x + b;
+        } else if (x > 7 && x < 8) {
+            result = Math.sin(2 * x);
+        } else {
+            System.out.println("Значення x повинно бути в межах (-∞, 8)");
+            scanner.close();
+            return; 
+        }
+
+        System.out.printf("Значення f(%.2f) = %.4f%n", x, result);
+
+        scanner.close();
+    }
+}
